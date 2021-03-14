@@ -11,14 +11,14 @@ namespace Board {
     public:
         Board();
         ~Board();
-        void reset();
-
         static inline uint8_t getRowSize() { return ROW_SIZE; }
 
         PlayerId_t getIdAt(uint8_t x, uint8_t y) const;
         PlayerId_t getIdAt(Position &pos) const;
 
         void makeMove(Player::PlayerInterface &player);
+
+        void reset();
 
     protected:
         static inline bool isOutOfRange(uint8_t x, uint8_t y) { return x >= ROW_SIZE || y >= ROW_SIZE; }
